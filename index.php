@@ -1,3 +1,11 @@
+<?php
+$logged_in = true;
+if ($logged_in == false) {
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <html class="h-full bg-gray-100">
     <head>
         <title>Fakebook</title>
