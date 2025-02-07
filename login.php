@@ -17,5 +17,6 @@
         <p>
             <input name="login" type="submit" value="Log in">
         </p>
+    </form>
 </body>
 </html>
