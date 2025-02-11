@@ -1,3 +1,20 @@
+<?php
+include 'includes/sessions.php';
+if ($logged_in == false) {
+    header('Location: account.php');
+    exit;
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $user_email    = $_POST['email'];
+    $user_password = $_POST['password'];
+    if ($user_email == $email and $user_password == $password) {
+        login();
+        header('Location: account.php');
+        exit;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +23,7 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 </head>
 <body>
+    <?php include 'includes/header-member.php'; ?>
     <h1>Login page</h1>
     <form method="post" action="">
         <p>
